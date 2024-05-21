@@ -1,0 +1,15 @@
+class Solution {
+  	public int[] shuffle(int[] nums, int n) {
+		int min =0, max = n;
+		int[] res = new int[nums.length];
+		int i=0;
+		while (max!= nums.length) {
+			res[i] = nums[min];
+			res[i+1] = nums[max];
+			min++;
+			max++;
+			i+= 2;
+		}
+		return res;
+	}
+}
