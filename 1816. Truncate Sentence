@@ -1,0 +1,15 @@
+class Solution {
+   	public String truncateSentence(String s, int k) {
+		int spaceNumber = 0;
+		int index =0;
+		int i =0;
+		while (spaceNumber !=k) {
+			if(s.charAt(i) == ' ' || i == s.length()-1) {
+				spaceNumber++;
+				index = i== s.length()-1? i+1 : i;
+			}
+			i++;
+		}
+		return s.substring(0,index);
+	}
+}
