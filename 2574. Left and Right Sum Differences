@@ -1,0 +1,17 @@
+class Solution {
+    public int[] leftRightDifference(int[] nums) {
+        int[] ans = new int[nums.length];
+        getDifference(nums, ans, 0, 0);
+        return ans;
+    }
+
+    public int getDifference(int[] A, int[] res, int i, int leftSum){
+        if(i == A.length){
+            return 0;
+        }
+
+        int rightSum = getDifference(A, res, i + 1, leftSum + A[i]);
+        res[i] = Math.abs(leftSum - rightSum);
+        return rightSum + A[i];
+    }
+}
